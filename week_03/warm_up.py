@@ -20,12 +20,7 @@ else:
     print("Odd")
 
 
-def thingo():
-    x = 4
-    print(x)
-    print(x)
-    return x
-
+# explanation of if/else
 # sales = 2345678
 # sales = float(input("Enter sales: $"))
 #
