@@ -2,7 +2,7 @@
 
 
 def main():
-    """Main program."""
+    """Opening walk-through example."""
     names = ["Bill", "Jane", "Sven"]
     ages = [21, 34, 56]
     print(find_oldest(names, ages))
