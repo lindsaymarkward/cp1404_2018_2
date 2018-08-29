@@ -10,14 +10,16 @@ class Product:
         sale_status = 'y' if self.is_on_sale else 'n'
         return "{} ${:.2f} ({})".format(self.name, self.price, sale_status)
 
+    # def __repr__(self):
+    #     return str(self)
 
-p1 = Product("Phone", 356.4, True)
-print(p1)
-p2 = Product("Chicken", 29)
-print(p2)
 
-# p1.name = "Phone"
-# print(p1.name, p1.price)
-# print(p1.GST_RATE)
-# p1.dummy(5)
-# Product.dummy(p1)
+if __name__ == '__main__':
+    p1 = Product("Phone", 356.4, True)
+    print(p1)
+    p2 = Product("Chicken", 29)
+    print(p2)
+
+    # p1.name = "Phone"
+    # print(p1.name, p1.price)
+    # print(p1.GST_RATE)

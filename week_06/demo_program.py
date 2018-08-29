@@ -15,8 +15,10 @@ load products
 #     for product in products:
 #         sale_status = 'y' if product[2] else 'n'
 #         print("{},{},{}".format(product[0], product[1], sale_status), file=output_file)
-ON_SALE_INDEX = 2
 
+from week_06.product import Product
+
+ON_SALE_INDEX = 2
 PRODUCTS_FILE = "products.csv"
 MENU_STRING = ">>>"
 
@@ -44,7 +46,8 @@ def main():
 
 def load_products():
     print("loading")
-    products = [["Phone", 340, False], ["PC", 1420.95, True], ["Plant", 24.5, True]]
+    # products = [["Phone", 340, False], ["PC", 1420.95, True], ["Plant", 24.5, True]]
+    products = [Product("Phone", 340, False), Product("PC", 1420.95, True), Product("Plant", 24.5, True)]
     return products
 
 
@@ -56,7 +59,7 @@ def list_products(products):
 
 def list_on_sale_products(products):
     for product in products:
-        if product[ON_SALE_INDEX]:
+        if product.is_on_sale:
             print(product)
 
 
