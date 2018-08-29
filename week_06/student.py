@@ -9,8 +9,8 @@ class Student:
         self._special = True
         self.__secret = ":)"
 
-    def __str__(self):
-        return "{} {} ({})".format(self.first_name, self.last_name, self.id)
+    # def __str__(self):
+    #     return "{} {} ({})".format(self.first_name, self.last_name, self.id)
 
     def get_full_name(self):
         return self.first_name + " " + self.last_name
@@ -18,9 +18,11 @@ class Student:
 
 if __name__ == '__main__':
     s1 = Student("Lindsay", "Ward", 123)
-    print(s1._special)
+    print(s1.first_name)
+
+    # print(s1._special)
     # print(s1.__secret)
-    print(s1._Student__secret)
+    # print(s1._Student__secret)
     # print(s1.__dict__)
     # s1.graduate()
     # s2 = Student("Bob", "Marley")

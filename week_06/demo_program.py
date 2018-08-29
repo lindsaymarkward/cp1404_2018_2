@@ -15,6 +15,7 @@ load products
 #     for product in products:
 #         sale_status = 'y' if product[2] else 'n'
 #         print("{},{},{}".format(product[0], product[1], sale_status), file=output_file)
+ON_SALE_INDEX = 2
 
 PRODUCTS_FILE = "products.csv"
 MENU_STRING = ">>>"
@@ -30,6 +31,8 @@ def main():
             list_products(products)
         elif choice == "S":
             swap_sale_status(products)
+        elif choice == "O":
+            list_on_sale_products(products)
         else:
             print("Invalid")
 
@@ -51,6 +54,12 @@ def list_products(products):
         print(product)
 
 
+def list_on_sale_products(products):
+    for product in products:
+        if product[ON_SALE_INDEX]:
+            print(product)
+
+
 def swap_sale_status(products):
     list_products(products)
     is_valid_input = False
@@ -64,6 +73,10 @@ def swap_sale_status(products):
         except ValueError:  # or just  except:
             print("Invalid (not an integer)")
     print(products[number])
+
+
+def save_products(products):
+    pass
 
 
 main()
