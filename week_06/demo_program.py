@@ -45,9 +45,19 @@ def main():
 
 
 def load_products():
-    print("loading")
+    products = []
+    with open(PRODUCTS_FILE) as input_file:
+        for line in input_file:
+            # print(repr(line))
+            parts = line.strip().split(',')
+            # print(parts)
+            if parts[2] == 'y':
+                is_on_sale = True
+            else:
+                is_on_sale = False
+            products.append(Product(parts[0], float(parts[1]), is_on_sale))
     # products = [["Phone", 340, False], ["PC", 1420.95, True], ["Plant", 24.5, True]]
-    products = [Product("Phone", 340, False), Product("PC", 1420.95, True), Product("Plant", 24.5, True)]
+    # products = [Product("Phone", 340, False), Product("PC", 1420.95, True), Product("Plant", 24.5, True)]
     return products
 
 
@@ -75,6 +85,7 @@ def swap_sale_status(products):
                 is_valid_input = True
         except ValueError:  # or just  except:
             print("Invalid (not an integer)")
+    products[number].put_on_sale(10)
     print(products[number])
 
 

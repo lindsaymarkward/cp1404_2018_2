@@ -7,12 +7,15 @@ class Product:
         self.is_on_sale = is_on_sale
 
     def __str__(self):
-        sale_status = 'y' if self.is_on_sale else 'n'
-        return "{} ${:.2f} ({})".format(self.name, self.price, sale_status)
+        sale_status = ' (on sale!!)' if self.is_on_sale else ''
+        return "{} ${:.2f}{}".format(self.name, self.price, sale_status)
 
-    # def __repr__(self):
-    #     return str(self)
+    def __repr__(self):
+        return str(self)
 
+    def put_on_sale(self, percentage):
+        self.is_on_sale = True
+        self.price *= (1 - percentage / 100)
 
 if __name__ == '__main__':
     p1 = Product("Phone", 356.4, True)
