@@ -1,6 +1,6 @@
 # Code Listing 11.7
 
-import math  # need sqrt (square root)
+from math import sqrt
 
 
 class Point:
@@ -22,7 +22,7 @@ class Point:
         x_diff = self.x - other.x  # (x1 — x2)
         y_diff = self.y - other.y  # (y1 — y2)
         # square differences, sum, and take sqrt
-        return math.sqrt(x_diff ** 2 + y_diff ** 2)
+        return sqrt(x_diff ** 2 + y_diff ** 2)
 
     def sum(self, other):
         """Vector Sum of self and a Point, return a Point instance."""
